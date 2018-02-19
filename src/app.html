@@ -1,0 +1,32 @@
+<template>
+  <require from="bootstrap/css/bootstrap.css"></require>
+  <require from="./assets/css/styles.css"></require>
+  <require from="./modules/projects/project-list"></require>
+
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="projects">
+        <i class="fa fa-user"></i>
+        <span>Projects</span>
+      </a>
+    </div>
+  </nav>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="members">
+        <i class="fa fa-user"></i>
+        <span>Users</span>
+      </a>
+    </div>
+  </nav>
+
+
+  <loading-indicator loading.bind="router.isNavigating || api.isRequesting"></loading-indicator>
+
+  <div class="container">
+    <div class="row">
+      <project-list class="col-md-4"></project-list>
+      <router-view class="col-md-8"></router-view>
+    </div>
+  </div>
+</template>

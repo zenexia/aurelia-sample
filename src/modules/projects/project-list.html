@@ -1,0 +1,12 @@
+<template>
+    <div class="project-list">
+        <ul class="list-group">
+            <li repeat.for="project of projects" class="list-group-item ${project.id === $parent.selectedId ? 'active' : ''}">
+                <a route-href="route: projects; params.bind: {id:project.id}" click.delegate="$parent.select(project)">
+                    <h4 class="list-group-item-heading">${project.firstName} ${project.lastName}</h4>
+                    <p class="list-group-item-text">${project.email}</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</template>
